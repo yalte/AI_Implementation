@@ -1,0 +1,5 @@
+
+pyinstaller --onefile -w [programa.py]
+
+To add an icon to your .exe file to do: pyinstaller -i [iconfile] [file_name]  . 
+Making sure that your icon file is in the same directory that your cmd is in.
