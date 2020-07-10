@@ -6,3 +6,4 @@ class TestApp(App):
     return Button(text='teste')
 
 TestApp().run()
+
