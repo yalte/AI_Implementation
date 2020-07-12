@@ -92,6 +92,8 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
+
+
 def main():
   pygame.init()
 
@@ -104,22 +106,25 @@ def main():
 
   snake = Snake()
   rabit = Rabit()
+  speed = 10
+
+  myfont = pygame.font.SysFont("monospace", 16)
 
   score = 0
   while (True):
-    clock.tick(10)
+    clock.tick(speed)
     snake.handle_keys()
     drawGrid(surface)
     snake.move()
     if snake.get_head_position() == rabit.position:
       snake.length += 1
       score += 1
-      rabit.randomize_position
+      rabit.randomize_position()
     snake.draw(surface)
     rabit.draw(surface)
     screen.blit(surface, (0, 0))
-    #text = myfont.render("Score {0}".format(score), 1,(0,0,0))
-    #screen.blit(text, (5, 10))
+    text = myfont.render("Score {0}".format(score), 1,(0,0,0))
+    screen.blit(text, (5, 10))
     pygame.display.update()
 
 main()
